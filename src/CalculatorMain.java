@@ -9,6 +9,7 @@ public class CalculatorMain {
         int first_num = 0;
         int second_num = 0;
         int result = 0;
+
         System.out.println("Введите операцию которую необходимо вычислить в формате a + b, a - b, a * b, " +
                 "a / b.\nОбе переменные должны быть представлены либо одновременно арабскими цифрами, либо одновременно " +
                 "римскими цифрами.\nВводные числа должны быть от 1 до 10 включительно. Результат вычисления римских цифр" +
@@ -82,13 +83,20 @@ public class CalculatorMain {
 
     private static boolean checkArab(char[] arabs, String s) {
         boolean result = false;
+        int count = 0;
         for (int j = 0; j < s.length(); j++) {
             char x = s.charAt(j);
             for (char arab : arabs) {
                 if (arab == x) {
                     result = true;
+                    count++;
+                    break;
                 }
+                result = false;
             }
+        }
+        if (count < s.length()) {
+            result = false;
         }
         return result;
     }
