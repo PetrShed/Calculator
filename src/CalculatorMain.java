@@ -61,6 +61,7 @@ public class CalculatorMain {
                     br.close();
                     System.out.println("Неверный формат строки!");
                 }
+                break;
             }
         }
 
